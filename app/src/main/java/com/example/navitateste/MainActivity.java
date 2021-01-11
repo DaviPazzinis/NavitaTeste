@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         TextView noData = findViewById(R.id.noData);
 
-        LinearLayoutManager layoutManager = new GridLayoutManager(this,2);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new MovieListAdapter(this, (BodyResponseModel) bodyResponseModelList, this);

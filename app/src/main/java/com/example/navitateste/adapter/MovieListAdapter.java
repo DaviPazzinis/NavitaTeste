@@ -15,6 +15,8 @@ import com.bumptech.glide.Glide;
 import com.example.navitateste.R;
 import com.example.navitateste.model.BodyResponseModel;
 
+import org.w3c.dom.Text;
+
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyViewHolder> {
 
     private Context context;
@@ -46,8 +48,13 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         holder.tvTitle.setText(this.movieList.getResults().get(position).getTitle());
 
         Glide.with(context)
-                .load(IMG_URL_BASE + this.movieList.getResults().get(position).getBackdrop_path())
-                .into(holder.movieImage);
+                .load(IMG_URL_BASE + this.movieList.getResults().get(position).getPoster_path())
+                .into(holder.imgMovieImage);
+
+        holder.tvMovieDate.setText(this.movieList.getResults().get(position).getRelease_date());
+
+        holder.tvMovieRate.setText(""+this.movieList.getResults().get(position).getVote_average());
+
 
     }
 
@@ -63,14 +70,21 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvTitle;
-        ImageView movieImage;
+        ImageView imgMovieImage;
+        TextView tvMovieDate;
+        TextView tvMovieRate;
+
         OnNoteListener onNoteListener;
 
         public MyViewHolder(View itemView, OnNoteListener onNoteListener) {
             super(itemView);
 
-            tvTitle = itemView.findViewById(R.id.textMovieNameView);
-            movieImage = itemView.findViewById(R.id.movieImage);
+            tvTitle = itemView.findViewById(R.id.text_movie_name);
+            imgMovieImage = itemView.findViewById(R.id.image_movie_banner);
+            tvMovieDate = itemView.findViewById(R.id.text_movie_date);
+            tvMovieRate = itemView.findViewById(R.id.text_movie_rate);
+
+
             this.onNoteListener = onNoteListener;
 
             itemView.setOnClickListener(this);
