@@ -1,6 +1,8 @@
 package com.example.navitateste.model;
 
-public class MovieModel {
+import java.io.Serializable;
+
+public class MovieModel implements Serializable {
 
     private boolean adult;
     private String backdrop_path;

@@ -20,10 +20,12 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
     private Context context;
     private BodyResponseModel movieList;
     String IMG_URL_BASE = "https://image.tmdb.org/t/p/w500/";
+    private OnNoteListener mOnNoteListener;
 
-    public MovieListAdapter(Context context, BodyResponseModel movieList) {
+    public MovieListAdapter(Context context, BodyResponseModel movieList, OnNoteListener mOnNoteListener) {
         this.context = context;
         this.movieList = movieList;
+        this.mOnNoteListener = mOnNoteListener;
     }
 
     public void setModelList(BodyResponseModel modelList) {
@@ -35,7 +37,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
     @Override
     public MovieListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.recycler_row, parent, false);
-        return new MyViewHolder(view);
+        return new MyViewHolder(view, mOnNoteListener);
     }
 
 
@@ -44,7 +46,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         holder.tvTitle.setText(this.movieList.getResults().get(position).getTitle());
 
         Glide.with(context)
-                .load(IMG_URL_BASE+this.movieList.getResults().get(position).getBackdrop_path())
+                .load(IMG_URL_BASE + this.movieList.getResults().get(position).getBackdrop_path())
                 .into(holder.movieImage);
 
     }
@@ -58,19 +60,33 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         return 0;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvTitle;
         ImageView movieImage;
+        OnNoteListener onNoteListener;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(View itemView, OnNoteListener onNoteListener) {
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.textMovieNameView);
             movieImage = itemView.findViewById(R.id.movieImage);
+            this.onNoteListener = onNoteListener;
 
+            itemView.setOnClickListener(this);
 
         }
 
+        @Override
+        public void onClick(View v) {
+
+            onNoteListener.onNoteClick(getBindingAdapterPosition());
+
+        }
     }
+
+    public interface OnNoteListener {
+        void onNoteClick(int position);
+    }
+
 }

@@ -7,15 +7,18 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.navitateste.adapter.MovieListAdapter;
 import com.example.navitateste.model.BodyResponseModel;
+import com.example.navitateste.model.MovieModel;
 import com.example.navitateste.viewmodel.MovieListViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MovieListAdapter.OnNoteListener {
 
     private BodyResponseModel bodyResponseModelList;
     private MovieListAdapter adapter;
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new MovieListAdapter(this, (BodyResponseModel) bodyResponseModelList);
+        adapter = new MovieListAdapter(this, (BodyResponseModel) bodyResponseModelList, this);
 
         recyclerView.setAdapter(adapter);
 
@@ -53,5 +56,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         viewModel.makeApiCall();
+    }
+
+    @Override
+    public void onNoteClick(int position) {
+        bodyResponseModelList.getResults().get(position);
+        Intent it = new Intent(this, MovieDetailsActivity.class);
+
+        MovieModel movieModel = bodyResponseModelList.getResults().get(position);
+        it.putExtra("title", movieModel);
+        startActivity(it);
     }
 }

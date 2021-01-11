@@ -1,8 +1,9 @@
 package com.example.navitateste.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class BodyResponseModel {
+public class BodyResponseModel implements Serializable {
 
     ArrayList<MovieModel> results = new ArrayList<> ();
 
