@@ -1,0 +1,16 @@
+package com.example.navitateste.model;
+
+import java.util.ArrayList;
+
+public class BodyResponseModel {
+
+    ArrayList<MovieModel> results = new ArrayList<> ();
+
+    public ArrayList<MovieModel> getResults() {
+        return results;
+    }
+
+    public void setResults(ArrayList<MovieModel> results) {
+        this.results = results;
+    }
+}
