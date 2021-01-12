@@ -2,7 +2,49 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.MovieDetailsActivity">
+
+    <ImageView
+        android:id="@+id/ic_favorite"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_baseline_favorite_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ic_like"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/Green" />
+
+    <TextView
+        android:id="@+id/text_detail_moviePopularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXX"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ic_favorite"
+        app:layout_constraintRight_toRightOf="@+id/ic_favorite"
+        app:layout_constraintTop_toBottomOf="@id/ic_favorite" />
+
+    <ImageView
+        android:id="@+id/ic_like"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_baseline_check_circle_24"
+        app:layout_constraintLeft_toRightOf="@id/ic_favorite"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/Green" />
+
+    <TextView
+        android:id="@+id/text_detail_movieVotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXX"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ic_like"
+        app:layout_constraintRight_toRightOf="@+id/ic_like"
+        app:layout_constraintTop_toBottomOf="@id/ic_like" />
 
     <View
         android:id="@+id/view_lineOne"
@@ -24,7 +66,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/view_lineOne"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_detail_movieVotes" />
 
     <View
         android:id="@+id/view_lineTwo"
@@ -54,7 +96,7 @@
         android:layout_height="1dp"
         android:background="@color/Black"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_detail_movieOverview"/>
+        app:layout_constraintTop_toBottomOf="@id/text_detail_movieOverview" />
 
     <ImageView
         android:id="@+id/text_detail_movieBanner"

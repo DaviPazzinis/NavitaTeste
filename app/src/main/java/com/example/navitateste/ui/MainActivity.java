@@ -1,4 +1,4 @@
-package com.example.navitateste;
+package com.example.navitateste.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.navitateste.R;
 import com.example.navitateste.adapter.MovieListAdapter;
 import com.example.navitateste.model.BodyResponseModel;
 import com.example.navitateste.model.MovieModel;
