@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroInstance {
 
-    public static String BASE_URL = "https://api.themoviedb.org/3/";
+    public static String BASE_URL = "https://api.themoviedb.org/3/movie/";
 
     private static Retrofit retrofit;
 
@@ -13,9 +13,9 @@ public class RetroInstance {
 
         if (retrofit == null){
             retrofit = new Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
         }
 
         return retrofit;

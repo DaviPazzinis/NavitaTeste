@@ -1,6 +1,7 @@
 package com.example.navitateste.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class MovieModel implements Serializable {
 

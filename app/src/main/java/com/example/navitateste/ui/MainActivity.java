@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
             public void onChanged(BodyResponseModel movieModels) {
                 if (movieModels != null) {
                     bodyResponseModelList = movieModels;
-
                     adapter.setModelList(movieModels);
 
                     noData.setVisibility(View.GONE);
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
                 }
             }
         });
+
         viewModel.makeApiCall();
     }
 
