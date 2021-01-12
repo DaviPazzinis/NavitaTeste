@@ -25,7 +25,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
 
     private Context context;
     private BodyResponseModel movieList;
-    String IMG_URL_BASE = "https://image.tmdb.org/t/p/w500/";
+    public static String IMG_URL_BASE = "https://image.tmdb.org/t/p/w500/";
     private OnNoteListener mOnNoteListener;
 
     public MovieListAdapter(Context context, BodyResponseModel movieList, OnNoteListener mOnNoteListener) {

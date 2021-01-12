@@ -3,17 +3,12 @@ package com.example.navitateste;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.example.navitateste.adapter.MovieListAdapter;
 import com.example.navitateste.model.BodyResponseModel;
 import com.example.navitateste.model.MovieModel;
