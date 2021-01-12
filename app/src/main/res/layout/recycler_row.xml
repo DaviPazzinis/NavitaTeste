@@ -4,14 +4,20 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:padding="16dp">
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp"
+    android:padding="0dp"
+    android:background="@drawable/borde_line">
+
 
     <ImageView
         android:id="@+id/image_movie_banner"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/image_movie_rate"
@@ -37,10 +43,10 @@
     <TextView
         android:id="@+id/text_movie_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/text_movie_rate"
         app:layout_constraintTop_toBottomOf="@+id/image_movie_rate" />
 
     <TextView
@@ -48,7 +54,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_movie_name" />
+        app:layout_constraintLeft_toLeftOf="@id/text_movie_rate"
+        app:layout_constraintTop_toBottomOf="@id/text_movie_name"
+        android:paddingBottom="8dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
