@@ -3,7 +3,7 @@ package com.example.navitateste.viewmodel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.navitateste.model.BodyResponseModel;
+import com.example.navitateste.model.MovieResponseDTO;
 import com.example.navitateste.services.APIService;
 import com.example.navitateste.services.RetroInstance;
 
@@ -14,30 +14,30 @@ import retrofit2.Response;
 
 public class MovieListViewModel extends ViewModel {
 
-    private final MutableLiveData<BodyResponseModel> nowPlayingMoviesList;
+    private final MutableLiveData<MovieResponseDTO> nowPlayingMovieList;
 
     public MovieListViewModel(){
-        nowPlayingMoviesList = new MutableLiveData<>();
+        nowPlayingMovieList = new MutableLiveData<>();
     }
 
-    public MutableLiveData<BodyResponseModel> getNowPlayingMoviesListObserver(){
-        return nowPlayingMoviesList;
+    public MutableLiveData<MovieResponseDTO> getNowPlayingMoviesListObserver(){
+        return nowPlayingMovieList;
     }
 
-    public void makeApiCall(){
+    public void makeNowPlayingMovieList(){
         APIService apiService = RetroInstance.getRetrofitClient().create(APIService.class);
 
-        Call<BodyResponseModel> call = apiService.getNowPlayingMovieList();
+        Call<MovieResponseDTO> call = apiService.getNowPlayingMovieList();
 
-        call.enqueue(new Callback<BodyResponseModel>() {
+        call.enqueue(new Callback<MovieResponseDTO>() {
             @Override
-            public void onResponse(Call<BodyResponseModel> call, Response<BodyResponseModel> response) {
-                nowPlayingMoviesList.postValue(response.body());
+            public void onResponse(Call<MovieResponseDTO> call, Response<MovieResponseDTO> response) {
+                nowPlayingMovieList.postValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<BodyResponseModel> call, Throwable t) {
-                nowPlayingMoviesList.postValue(null);
+            public void onFailure(Call<MovieResponseDTO> call, Throwable t) {
+                nowPlayingMovieList.postValue(null);
             }
         });
     }

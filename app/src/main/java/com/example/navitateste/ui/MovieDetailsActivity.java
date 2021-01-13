@@ -11,10 +11,6 @@ import com.bumptech.glide.Glide;
 import com.example.navitateste.R;
 import com.example.navitateste.model.MovieModel;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import static com.example.navitateste.adapter.MovieListAdapter.IMG_URL_BASE;
 
 public class MovieDetailsActivity extends AppCompatActivity {
@@ -24,54 +20,50 @@ public class MovieDetailsActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
+
+        // Retrieving content from MainActivity
         movieModel = (MovieModel) getIntent().getSerializableExtra("title");
-        this.setTitle(""+movieModel.getTitle());
 
-        // FIND VIEWS BY ID AREA
-        ImageView detail_movieBanner = findViewById(R.id.text_detail_movieBanner);
-        ImageView detail_movieBannerBG = findViewById(R.id.text_detail_movieBannerBG);
-        TextView detail_movieOverview = findViewById(R.id.text_detail_movieOverview);
-        TextView detail_moviePopularity = findViewById(R.id.text_detail_moviePopularity);
-        TextView detail_movieVotes = findViewById(R.id.text_detail_movieVotes);
-        TextView detail_movieDate = findViewById(R.id.text_detail_movieDate);
-        TextView detail_originalLangague = findViewById(R.id.text_detail_originalLanguage);
-        TextView detail_originalTitle = findViewById(R.id.text_detail_originalTitle);
-        TextView detail_realiseDate = findViewById(R.id.text_detail_realiseDate);
-        TextView detail_title = findViewById(R.id.text_detail_title);
-        TextView detail_popularity = findViewById(R.id.text_detail_popularity);
-        TextView detail_averageVotes = findViewById(R.id.text_detail_averageVotes);
-        TextView detail_votesCount = findViewById(R.id.text_detail_votesCount);
+        // FIND VIEW BY ID IN MENU AREA
+        ImageView detail_menu_movieBanner = findViewById(R.id.details_iv_menu_banner);
+        TextView detail_menu_moviePopularity = findViewById(R.id.details_tv_menu_popularity);
+        TextView detail_menu_movieVotes = findViewById(R.id.details_iv_menu_votes);
+        TextView detail_menu_movieDate = findViewById(R.id.details_tv_menu_realiseDate);
 
+        // SETTING DATA INTO MENU AREA
+        this.setTitle("" + movieModel.getTitle());
+        detail_menu_moviePopularity.setText("" + (int) movieModel.getPopularity());
+        detail_menu_movieVotes.setText("" + (int) movieModel.getVote_count());
+        detail_menu_movieDate.setText(movieModel.getRelease_date());
+        Glide.with(this)
+                .load(IMG_URL_BASE + movieModel.getPoster_path())
+                .into(detail_menu_movieBanner);
 
-        // SETTING DATA INTO ACTIVITY
+        // FIND VIEW BY ID IN DETAIL AREA
+        ImageView detail_movieBannerBG = findViewById(R.id.details_iv_bannerBG);
+        TextView detail_movieOverview = findViewById(R.id.details_tv_overview);
+        TextView detail_originalLanguage = findViewById(R.id.details_tv_originalLanguage);
+        TextView detail_originalTitle = findViewById(R.id.details_tv_originalTitle);
+        TextView detail_realiseDate = findViewById(R.id.details_tv_realiseDate);
+        TextView detail_title = findViewById(R.id.details_tv_title);
+        TextView detail_popularity = findViewById(R.id.details_tv_popularity);
+        TextView detail_averageVotes = findViewById(R.id.details_tv_averageVote);
+        TextView detail_votesCount = findViewById(R.id.details_tv_votesCount);
+
+        //SETTING DATA INTO DETAILS AREA
         detail_movieOverview.setText(movieModel.getOverview());
-        detail_moviePopularity.setText(""+(int) movieModel.getPopularity());
-        detail_movieVotes.setText(""+(int) movieModel.getVote_count());
-        detail_movieDate.setText(movieModel.getRelease_date());
-
-        //
-        detail_originalLangague.setText(movieModel.getOriginal_language());
+        detail_originalLanguage.setText(movieModel.getOriginal_language());
         detail_originalTitle.setText(movieModel.getOriginal_title());
         detail_realiseDate.setText(movieModel.getRelease_date());
         detail_title.setText(movieModel.getTitle());
-        detail_popularity.setText(""+(int) movieModel.getPopularity());
-        detail_averageVotes.setText(""+(int) movieModel.getVote_average());
-        detail_votesCount.setText(""+(int) movieModel.getVote_count());
-
-
-
-        Glide.with(this)
-                .load(IMG_URL_BASE + movieModel.getPoster_path())
-                .into(detail_movieBanner);
-
+        detail_popularity.setText("" + (int) movieModel.getPopularity());
+        detail_averageVotes.setText("" + (int) movieModel.getVote_average());
+        detail_votesCount.setText("" + (int) movieModel.getVote_count());
         Glide.with(this)
                 .load(IMG_URL_BASE + movieModel.getPoster_path())
                 .into(detail_movieBannerBG);
-
-
     }
 
 }

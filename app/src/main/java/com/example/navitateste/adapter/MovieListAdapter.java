@@ -1,6 +1,5 @@
 package com.example.navitateste.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,29 +11,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.bumptech.glide.load.resource.bitmap.CenterInside;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.navitateste.R;
-import com.example.navitateste.model.BodyResponseModel;
-
-import org.w3c.dom.Text;
+import com.example.navitateste.model.MovieResponseDTO;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyViewHolder> {
 
     private final Context context;
-    private BodyResponseModel movieList;
-    public static String IMG_URL_BASE = "https://image.tmdb.org/t/p/w500/";
+    private MovieResponseDTO movieList;
+    public static final String IMG_URL_BASE = "https://image.tmdb.org/t/p/w500/";
     private final OnNoteListener mOnNoteListener;
 
-    public MovieListAdapter(Context context, BodyResponseModel movieList, OnNoteListener mOnNoteListener) {
+    public MovieListAdapter(Context context, MovieResponseDTO movieList, OnNoteListener mOnNoteListener) {
         this.context = context;
         this.movieList = movieList;
         this.mOnNoteListener = mOnNoteListener;
     }
 
-    public void setModelList(BodyResponseModel modelList) {
+    public void setModelList(MovieResponseDTO modelList) {
         this.movieList = modelList;
         notifyDataSetChanged();
     }
@@ -42,7 +35,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
     @NonNull
     @Override
     public MovieListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.recycler_row, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_row, parent, false);
         return new MyViewHolder(view, mOnNoteListener);
     }
 
@@ -71,7 +64,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         return 0;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvTitle;
         ImageView imgMovieImage;
@@ -83,10 +76,10 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
         public MyViewHolder(View itemView, OnNoteListener onNoteListener) {
             super(itemView);
 
-            tvTitle = itemView.findViewById(R.id.text_movie_name);
-            imgMovieImage = itemView.findViewById(R.id.image_movie_banner);
-            tvMovieDate = itemView.findViewById(R.id.text_movie_date);
-            tvMovieRate = itemView.findViewById(R.id.text_movie_rate);
+            tvTitle = itemView.findViewById(R.id.item_tv_title);
+            imgMovieImage = itemView.findViewById(R.id.item_iv_banner);
+            tvMovieDate = itemView.findViewById(R.id.item_tv_realiseDate);
+            tvMovieRate = itemView.findViewById(R.id.item_tv_rate);
 
 
             this.onNoteListener = onNoteListener;

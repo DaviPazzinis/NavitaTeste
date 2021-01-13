@@ -3,7 +3,6 @@ package com.example.navitateste.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
@@ -13,13 +12,13 @@ import android.widget.TextView;
 
 import com.example.navitateste.R;
 import com.example.navitateste.adapter.MovieListAdapter;
-import com.example.navitateste.model.BodyResponseModel;
+import com.example.navitateste.model.MovieResponseDTO;
 import com.example.navitateste.model.MovieModel;
 import com.example.navitateste.viewmodel.MovieListViewModel;
 
 public class MainActivity extends AppCompatActivity implements MovieListAdapter.OnNoteListener {
 
-    private BodyResponseModel bodyResponseModelList;
+    private MovieResponseDTO movieResponseDTOList;
     private MovieListAdapter adapter;
 
     @Override
@@ -27,42 +26,42 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        TextView noData = findViewById(R.id.noData);
+        RecyclerView recyclerView = findViewById(R.id.main_recyclerView);
+        TextView tvNoResult = findViewById(R.id.main_tv_noResult );
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new MovieListAdapter(this, (BodyResponseModel) bodyResponseModelList, this);
+        adapter = new MovieListAdapter(this, (MovieResponseDTO) movieResponseDTOList, this);
 
         recyclerView.setAdapter(adapter);
 
         MovieListViewModel viewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
-        viewModel.getNowPlayingMoviesListObserver().observe(this, new Observer<BodyResponseModel>() {
+        viewModel.getNowPlayingMoviesListObserver().observe(this, new Observer<MovieResponseDTO>() {
             @Override
-            public void onChanged(BodyResponseModel movieModels) {
+            public void onChanged(MovieResponseDTO movieModels) {
                 if (movieModels != null) {
-                    bodyResponseModelList = movieModels;
+                    movieResponseDTOList = movieModels;
                     adapter.setModelList(movieModels);
 
-                    noData.setVisibility(View.GONE);
+                    tvNoResult.setVisibility(View.GONE);
                 } else {
-                    noData.setVisibility(View.VISIBLE);
+                    tvNoResult.setVisibility(View.VISIBLE);
                 }
             }
         });
 
-        viewModel.makeApiCall();
+        viewModel.makeNowPlayingMovieList();
 
     }
 
     @Override
     public void onNoteClick(int position) {
-        bodyResponseModelList.getResults().get(position);
+        movieResponseDTOList.getResults().get(position);
         Intent it = new Intent(this, MovieDetailsActivity.class);
 
-        MovieModel movieModel = bodyResponseModelList.getResults().get(position);
+        MovieModel movieModel = movieResponseDTOList.getResults().get(position);
         it.putExtra("title", movieModel);
         startActivity(it);
     }

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">NavitaTeste</string>
+    <string name="no_value">NO VALUE</string>
+    <string name="overview">Sinopse</string>
+    <string name="original_language">Linguagem Original:</string>
+    <string name="original_title">Titulo Original:</string>
+    <string name="realise_date">Data de Lançamento:</string>
+    <string name="title">Título:</string>
+    <string name="popularity">Popularidade:</string>
+    <string name="average_votes">Média de Votos:</string>
+    <string name="votes_count">Contagem de Votos:</string>
+    <string name="no_result_found">Sem Resultados</string>
+</resources>

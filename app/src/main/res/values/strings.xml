@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">NavitaTeste</string>
+    <string name="no_value">XXX</string>
+    <string name="overview">OVERVIEW</string>
+    <string name="original_language">Original Language:</string>
+    <string name="original_title">Original Title:</string>
+    <string name="realise_date">Realise Date:</string>
+    <string name="title">Title:</string>
+    <string name="popularity">Popularity:</string>
+    <string name="average_votes">Average Votes:</string>
+    <string name="votes_count">Votes Count:</string>
+    <string name="no_result_found">NO RESULT FOUND</string>
 </resources>

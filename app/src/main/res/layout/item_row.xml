@@ -11,51 +11,50 @@
 
 
     <ImageView
-        android:id="@+id/image_movie_banner"
+        android:id="@+id/item_iv_banner"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
-        android:id="@+id/image_movie_rate"
+        android:id="@+id/item_iv_rate"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginLeft="16dp"
         android:src="@drawable/ic_res_round"
-        app:layout_constraintBottom_toBottomOf="@+id/image_movie_banner"
+        app:layout_constraintBottom_toBottomOf="@+id/item_iv_banner"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_movie_banner" />
+        app:layout_constraintTop_toBottomOf="@+id/item_iv_banner" />
 
     <TextView
-        android:id="@+id/text_movie_rate"
+        android:id="@+id/item_tv_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/image_movie_rate"
-        app:layout_constraintLeft_toLeftOf="@+id/image_movie_rate"
-        app:layout_constraintRight_toRightOf="@+id/image_movie_rate"
-        app:layout_constraintTop_toTopOf="@+id/image_movie_rate" />
+        app:layout_constraintBottom_toBottomOf="@+id/item_iv_rate"
+        app:layout_constraintLeft_toLeftOf="@+id/item_iv_rate"
+        app:layout_constraintRight_toRightOf="@+id/item_iv_rate"
+        app:layout_constraintTop_toTopOf="@+id/item_iv_rate" />
 
     <TextView
-        android:id="@+id/text_movie_name"
+        android:id="@+id/item_tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="@id/text_movie_rate"
-        app:layout_constraintTop_toBottomOf="@+id/image_movie_rate" />
+        app:layout_constraintLeft_toLeftOf="@id/item_iv_rate"
+        app:layout_constraintTop_toBottomOf="@+id/item_iv_rate" />
 
     <TextView
-        android:id="@+id/text_movie_date"
+        android:id="@+id/item_tv_realiseDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/text_movie_rate"
-        app:layout_constraintTop_toBottomOf="@id/text_movie_name"
+        app:layout_constraintLeft_toLeftOf="@id/item_tv_rate"
+        app:layout_constraintTop_toBottomOf="@id/item_tv_title"
         android:paddingBottom="8dp"/>
 
 
