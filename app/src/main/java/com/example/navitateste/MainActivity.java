@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
 
     }
 
-    public void findViewsById(){
+    public void findViewsById() {
         recyclerView = findViewById(R.id.main_recyclerView);
         tvNoResult = findViewById(R.id.main_tv_noResult);
         main_refreshLayout = findViewById(R.id.main_refreshLayout);
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
     }
 
     /**
-     *  ONLY LIFE CYCLE DOWN BELLOW
+     * ONLY LIFE CYCLE DOWN BELLOW
      */
 
     @Override

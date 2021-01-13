@@ -14,22 +14,22 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         try {
-            if (isOnline(context)){
+            if (isOnline(context)) {
                 Toast.makeText(context, context.getString(R.string.isConnected), Toast.LENGTH_SHORT).show();
-            }else {
+            } else {
                 Toast.makeText(context, context.getString(R.string.notConnected), Toast.LENGTH_SHORT).show();
             }
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }
 
-    public boolean isOnline(Context context){
+    public boolean isOnline(Context context) {
         try {
-            ConnectivityManager connectivityManager =  (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            return (networkInfo!= null && networkInfo.isConnected());
-        }catch (NullPointerException e){
+            return (networkInfo != null && networkInfo.isConnected());
+        } catch (NullPointerException e) {
             e.printStackTrace();
             return false;
         }

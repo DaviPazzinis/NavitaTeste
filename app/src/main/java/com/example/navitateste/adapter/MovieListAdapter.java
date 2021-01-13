@@ -67,7 +67,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView tvTitle;
+        final TextView tvTitle;
         ImageView ivMovieImage;
         TextView tvMovieDate;
         TextView tvMovieRate;

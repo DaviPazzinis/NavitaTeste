@@ -1,8 +1,5 @@
 package com.example.navitateste.viewmodel;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -20,16 +17,15 @@ public class MovieListViewModel extends ViewModel {
 
     private final MutableLiveData<MovieResponseDTO> nowPlayingMovieList;
 
-    public MovieListViewModel(){
+    public MovieListViewModel() {
         nowPlayingMovieList = new MutableLiveData<>();
     }
 
-    public MutableLiveData<MovieResponseDTO> getNowPlayingMoviesListObserver(){
+    public MutableLiveData<MovieResponseDTO> getNowPlayingMoviesListObserver() {
         return nowPlayingMovieList;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void makeNowPlayingMovieList(){
+    public void makeNowPlayingMovieList() {
         APIService apiService = RetroInstance.getRetrofitClient().create(APIService.class);
 
         LanguageSelector languageSelector = new LanguageSelector();
