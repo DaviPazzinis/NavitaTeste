@@ -1,4 +1,4 @@
-package com.example.navitateste.viewmodel;
+package com.example.navitateste.util;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,15 +7,17 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
+import com.example.navitateste.R;
+
 public class NetworkChangeReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
         try {
             if (isOnline(context)){
-                Toast.makeText(context, "Connected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.isConnected), Toast.LENGTH_SHORT).show();
             }else {
-                Toast.makeText(context, "Not Connected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, context.getString(R.string.notConnected), Toast.LENGTH_SHORT).show();
             }
         }catch (NullPointerException e){
             e.printStackTrace();

@@ -11,7 +11,4 @@ public class MovieResponseDTO implements Serializable {
         return results;
     }
 
-    public void setResults(ArrayList<MovieModel> results) {
-        this.results = results;
-    }
 }

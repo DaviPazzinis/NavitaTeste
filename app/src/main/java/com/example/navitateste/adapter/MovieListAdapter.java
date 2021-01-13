@@ -1,5 +1,6 @@
 package com.example.navitateste.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,16 +41,16 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
     }
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MovieListAdapter.MyViewHolder holder, int position) {
         holder.tvTitle.setText(this.movieList.getResults().get(position).getTitle());
 
         Glide.with(context)
                 .load(IMG_URL_BASE + this.movieList.getResults().get(position).getPoster_path())
-                .into(holder.imgMovieImage);
+                .into(holder.ivMovieImage);
 
         holder.tvMovieDate.setText(this.movieList.getResults().get(position).getRelease_date());
-
         holder.tvMovieRate.setText("" + this.movieList.getResults().get(position).getVote_average());
 
 
@@ -67,7 +68,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvTitle;
-        ImageView imgMovieImage;
+        ImageView ivMovieImage;
         TextView tvMovieDate;
         TextView tvMovieRate;
 
@@ -77,13 +78,10 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.item_tv_title);
-            imgMovieImage = itemView.findViewById(R.id.item_iv_banner);
+            ivMovieImage = itemView.findViewById(R.id.item_iv_banner);
             tvMovieDate = itemView.findViewById(R.id.item_tv_realiseDate);
             tvMovieRate = itemView.findViewById(R.id.item_tv_rate);
-
-
             this.onNoteListener = onNoteListener;
-
             itemView.setOnClickListener(this);
 
         }

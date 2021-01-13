@@ -10,4 +10,6 @@
     <string name="average_votes">Média de Votos:</string>
     <string name="votes_count">Contagem de Votos:</string>
     <string name="no_result_found">Sem Resultados</string>
+    <string name="isConnected">CONECTADO A INTERNET</string>
+    <string name="notConnected">SEM CONEXÃO A INTERNET</string>
 </resources>

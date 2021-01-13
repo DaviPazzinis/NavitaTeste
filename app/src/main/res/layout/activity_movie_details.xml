@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MovieDetailsActivity">
+    tools:context=".MovieDetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -160,6 +160,8 @@
                 android:id="@+id/details_tv_originalLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="@string/no_value"
                 android:textAllCaps="true"

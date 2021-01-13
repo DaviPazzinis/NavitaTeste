@@ -7,7 +7,7 @@ public class MovieModel implements Serializable {
 
     private boolean adult;
     private String backdrop_path;
-    ArrayList <Integer> genre_ids = new ArrayList<>();
+    ArrayList<Integer> genre_ids = new ArrayList<>();
     private float id;
     private String original_language;
     private String original_title;

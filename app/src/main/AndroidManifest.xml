@@ -13,15 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NavitaTeste">
-        <receiver android:name=".viewmodel.NetworkChangeReceiver">
+        <receiver android:name=".util.NetworkChangeReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"
                     tools:ignore="BatteryLife" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.MovieDetailsActivity" />
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".MovieDetailsActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

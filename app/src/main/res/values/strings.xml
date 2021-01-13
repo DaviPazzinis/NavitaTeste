@@ -10,4 +10,6 @@
     <string name="average_votes">Average Votes:</string>
     <string name="votes_count">Votes Count:</string>
     <string name="no_result_found">NO RESULT FOUND</string>
+    <string name="isConnected">CONNECTED TO INTERNET</string>
+    <string name="notConnected">NO CONNECTION TO INTERNET</string>
 </resources>
