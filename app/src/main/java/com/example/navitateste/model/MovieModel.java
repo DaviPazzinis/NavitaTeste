@@ -7,6 +7,7 @@ public class MovieModel implements Serializable {
 
     private boolean adult;
     private String backdrop_path;
+    ArrayList <Integer> genre_ids = new ArrayList<>();
     private float id;
     private String original_language;
     private String original_title;
@@ -22,9 +23,10 @@ public class MovieModel implements Serializable {
     public MovieModel() {
     }
 
-    public MovieModel(boolean adult, String backdrop_path, float id, String original_language, String original_title, String overview, float popularity, String poster_path, String release_date, String title, boolean video, float vote_average, float vote_count) {
+    public MovieModel(boolean adult, String backdrop_path, ArrayList<Integer> genre_ids, float id, String original_language, String original_title, String overview, float popularity, String poster_path, String release_date, String title, boolean video, float vote_average, float vote_count) {
         this.adult = adult;
         this.backdrop_path = backdrop_path;
+        this.genre_ids = genre_ids;
         this.id = id;
         this.original_language = original_language;
         this.original_title = original_title;
@@ -36,6 +38,14 @@ public class MovieModel implements Serializable {
         this.video = video;
         this.vote_average = vote_average;
         this.vote_count = vote_count;
+    }
+
+    public ArrayList<Integer> getGenre_ids() {
+        return genre_ids;
+    }
+
+    public void setGenre_ids(ArrayList<Integer> genre_ids) {
+        this.genre_ids = genre_ids;
     }
 
     public String getBackdrop_path() {

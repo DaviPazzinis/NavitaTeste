@@ -149,7 +149,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="Original Language: "
                 android:textColor="@color/Black"
@@ -162,7 +161,6 @@
                 android:id="@+id/text_detail_originalLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:paddingBottom="16dp"
                 android:text="XXX"
                 android:textColor="@color/Black"
@@ -176,7 +174,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="Original Title: "
                 android:textColor="@color/Black"
@@ -195,7 +192,6 @@
                 android:text="XXX"
                 android:textColor="@color/Black"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/text_originalTitle"
                 app:layout_constraintBottom_toBottomOf="@id/text_originalTitle"/>
 
@@ -204,7 +200,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="Realise Date: "
                 android:textColor="@color/Black"
@@ -218,12 +213,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="XXX"
                 android:textColor="@color/Black"
                 android:textSize="20sp"
-                android:textStyle="bold"
+
                 app:layout_constraintLeft_toRightOf="@id/text_realiseDate"
                 app:layout_constraintBottom_toBottomOf="@id/text_realiseDate"/>
 
@@ -232,7 +226,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="Title: "
                 android:textColor="@color/Black"
@@ -251,7 +244,7 @@
                 android:text="XXX"
                 android:textColor="@color/Black"
                 android:textSize="20sp"
-                android:textStyle="bold"
+
                 app:layout_constraintLeft_toRightOf="@id/text_title"
                 app:layout_constraintBottom_toBottomOf="@id/text_title"/>
 
@@ -260,7 +253,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="Popularity: "
                 android:textColor="@color/Black"
@@ -279,7 +271,7 @@
                 android:text="XXX"
                 android:textColor="@color/Black"
                 android:textSize="20sp"
-                android:textStyle="bold"
+
                 app:layout_constraintLeft_toRightOf="@id/text_popularity"
                 app:layout_constraintBottom_toBottomOf="@id/text_popularity"/>
 
@@ -288,7 +280,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="Average Votes: "
                 android:textColor="@color/Black"
@@ -307,7 +298,7 @@
                 android:text="XXX"
                 android:textColor="@color/Black"
                 android:textSize="20sp"
-                android:textStyle="bold"
+
                 app:layout_constraintLeft_toRightOf="@id/text_averageVote"
                 app:layout_constraintBottom_toBottomOf="@id/text_averageVote"/>
 
@@ -316,7 +307,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:paddingBottom="16dp"
                 android:text="Votes Count: "
                 android:textColor="@color/Black"
@@ -335,7 +325,6 @@
                 android:text="XXX"
                 android:textColor="@color/Black"
                 android:textSize="20sp"
-                android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/text_votesCount"
                 app:layout_constraintBottom_toBottomOf="@id/text_votesCount"/>
 
@@ -352,7 +341,6 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.core.widget.NestedScrollView>
 

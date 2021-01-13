@@ -1,4 +1,4 @@
-package com.example.navitateste.network;
+package com.example.navitateste.services;
 
 import com.example.navitateste.model.BodyResponseModel;
 

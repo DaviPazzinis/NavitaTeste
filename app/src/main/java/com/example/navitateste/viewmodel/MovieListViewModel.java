@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.navitateste.model.BodyResponseModel;
-import com.example.navitateste.network.APIService;
-import com.example.navitateste.network.RetroInstance;
+import com.example.navitateste.services.APIService;
+import com.example.navitateste.services.RetroInstance;
 
 import retrofit2.Call;
 import retrofit2.Callback;

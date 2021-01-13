@@ -23,10 +23,10 @@ import org.w3c.dom.Text;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyViewHolder> {
 
-    private Context context;
+    private final Context context;
     private BodyResponseModel movieList;
     public static String IMG_URL_BASE = "https://image.tmdb.org/t/p/w500/";
-    private OnNoteListener mOnNoteListener;
+    private final OnNoteListener mOnNoteListener;
 
     public MovieListAdapter(Context context, BodyResponseModel movieList, OnNoteListener mOnNoteListener) {
         this.context = context;

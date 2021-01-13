@@ -2,6 +2,7 @@ package com.example.navitateste.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
 
     private BodyResponseModel bodyResponseModelList;
     private MovieListAdapter adapter;
-    private MovieListViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
 
         recyclerView.setAdapter(adapter);
 
-        viewModel = ViewModelProviders.of(this).get(MovieListViewModel.class);
+        MovieListViewModel viewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
         viewModel.getNowPlayingMoviesListObserver().observe(this, new Observer<BodyResponseModel>() {
             @Override
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
         });
 
         viewModel.makeApiCall();
+
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.navitateste.network;
+package com.example.navitateste.services;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
