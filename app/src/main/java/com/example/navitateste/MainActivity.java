@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
         recyclerView.setLayoutManager(layoutManager);
 
         // mAdapter receiving content
-        mAdapter = new MovieListAdapter(this, (MovieResponseDTO) movieResponseDTOList, this);
+        mAdapter = new MovieListAdapter(this, movieResponseDTOList, this);
 
         // Setting mAdapter into the recyclerView
         recyclerView.setAdapter(mAdapter);
