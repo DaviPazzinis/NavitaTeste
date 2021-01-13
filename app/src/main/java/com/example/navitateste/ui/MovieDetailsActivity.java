@@ -37,12 +37,29 @@ public class MovieDetailsActivity extends AppCompatActivity {
         TextView detail_moviePopularity = findViewById(R.id.text_detail_moviePopularity);
         TextView detail_movieVotes = findViewById(R.id.text_detail_movieVotes);
         TextView detail_movieDate = findViewById(R.id.text_detail_movieDate);
+        TextView detail_originalLangague = findViewById(R.id.text_detail_originalLanguage);
+        TextView detail_originalTitle = findViewById(R.id.text_detail_originalTitle);
+        TextView detail_realiseDate = findViewById(R.id.text_detail_realiseDate);
+        TextView detail_title = findViewById(R.id.text_detail_title);
+        TextView detail_popularity = findViewById(R.id.text_detail_popularity);
+        TextView detail_averageVotes = findViewById(R.id.text_detail_averageVotes);
+        TextView detail_votesCount = findViewById(R.id.text_detail_votesCount);
+
 
         // SETTING DATA INTO ACTIVITY
         detail_movieOverview.setText(movieModel.getOverview());
         detail_moviePopularity.setText(""+(int) movieModel.getPopularity());
         detail_movieVotes.setText(""+(int) movieModel.getVote_count());
         detail_movieDate.setText(movieModel.getRelease_date());
+
+        //
+        detail_originalLangague.setText(movieModel.getOriginal_language());
+        detail_originalTitle.setText(movieModel.getOriginal_title());
+        detail_realiseDate.setText(movieModel.getRelease_date());
+        detail_title.setText(movieModel.getTitle());
+        detail_popularity.setText(""+(int) movieModel.getPopularity());
+        detail_averageVotes.setText(""+(int) movieModel.getVote_average());
+        detail_votesCount.setText(""+(int) movieModel.getVote_count());
 
 
 

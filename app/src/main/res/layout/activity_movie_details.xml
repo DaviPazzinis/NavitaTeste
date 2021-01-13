@@ -42,8 +42,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/ic_favorite"
@@ -108,14 +107,6 @@
                 app:layout_constraintRight_toRightOf="@+id/ic_calendar"
                 app:layout_constraintTop_toBottomOf="@id/ic_calendar" />
 
-            <View
-                android:id="@+id/view_lineOne"
-                android:layout_width="50dp"
-                android:layout_height="1dp"
-                android:background="@color/Black"
-                app:layout_constraintBottom_toBottomOf="@id/text_overview"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="@id/text_overview" />
 
             <TextView
                 android:id="@+id/text_overview"
@@ -127,7 +118,7 @@
                 android:textColor="@color/Black"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@id/view_lineOne"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_detail_movieVotes" />
 
             <View
@@ -138,6 +129,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/text_overview"
                 app:layout_constraintLeft_toRightOf="@id/text_overview"
                 app:layout_constraintTop_toTopOf="@id/text_overview" />
+
 
             <TextView
                 android:id="@+id/text_detail_movieOverview"
@@ -152,18 +144,206 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_overview" />
 
-            <View
-                android:id="@+id/view_lineThree"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:background="@color/Black"
+            <TextView
+                android:id="@+id/text_originalLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Original Language: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_detail_movieOverview" />
+
+            <TextView
+                android:id="@+id/text_detail_originalLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:paddingBottom="16dp"
+                android:text="XXX"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                app:layout_constraintLeft_toRightOf="@id/text_originalLanguage"
+                app:layout_constraintBottom_toBottomOf="@id/text_originalLanguage"/>
+
+            <TextView
+                android:id="@+id/text_originalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Original Title: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_originalLanguage" />
+
+            <TextView
+                android:id="@+id/text_detail_originalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="XXX"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/text_originalTitle"
+                app:layout_constraintBottom_toBottomOf="@id/text_originalTitle"/>
+
+            <TextView
+                android:id="@+id/text_realiseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Realise Date: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_originalTitle" />
+
+            <TextView
+                android:id="@+id/text_detail_realiseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="XXX"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/text_realiseDate"
+                app:layout_constraintBottom_toBottomOf="@id/text_realiseDate"/>
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Title: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_realiseDate" />
+
+            <TextView
+                android:id="@+id/text_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="XXX"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/text_title"
+                app:layout_constraintBottom_toBottomOf="@id/text_title"/>
+
+            <TextView
+                android:id="@+id/text_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Popularity: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+            <TextView
+                android:id="@+id/text_detail_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="XXX"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/text_popularity"
+                app:layout_constraintBottom_toBottomOf="@id/text_popularity"/>
+
+            <TextView
+                android:id="@+id/text_averageVote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Average Votes: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_popularity" />
+
+            <TextView
+                android:id="@+id/text_detail_averageVotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="XXX"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/text_averageVote"
+                app:layout_constraintBottom_toBottomOf="@id/text_averageVote"/>
+
+            <TextView
+                android:id="@+id/text_votesCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="Votes Count: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_detail_averageVotes" />
+
+            <TextView
+                android:id="@+id/text_detail_votesCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:text="XXX"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/text_votesCount"
+                app:layout_constraintBottom_toBottomOf="@id/text_votesCount"/>
+
 
             <ImageView
                 android:id="@+id/text_detail_movieBannerBG"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:alpha="0.2"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
